@@ -1,0 +1,149 @@
+:root{
+    ---ff--primary: 'Livvic', sans-serif;
+    --clr-blue: #3535ec;
+    --clr-blue-dark: #120945;
+    --clr-gray: #d4d7f5;
+    --clr-green: #306753;
+    --clr-pink: #de7eb6;
+}
+
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: var(--clr-blue-dark);
+    color: white;
+    font-family: var(---ff--primary);
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+header{
+    height: 220px;
+    background-color: var(--clr-blue);
+    border-radius: 0 0 20px 20px;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    background-image: url('images/header-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 70px;
+
+    z-index: 1;
+}
+
+.calendar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+}
+
+.box{
+    margin: 5px;
+    border-radius: 12px;
+    background-color: var(--clr-green);
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:last-child{
+    background-color: var(--clr-gray);
+    width: calc(100% - 15px);
+    color: var(--clr-green);
+}
+
+.box-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.box-date{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.box-opened{
+    opacity: 0.6;
+}
+
+/* Modale */
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    background-color: rgba(12, 11, 74, 0.8);
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    z-index: 2;
+
+
+}
+
+.modal-window{
+    min-width: 320px;
+    min-height: 320px;
+    background-color: var(--clr-pink);
+    border-radius: 20px;
+
+    padding: 32px;
+    text-align: center;
+
+    transform: scale(1);
+    
+    transition: transform 0.5s;
+}
+
+.modal-content{
+    padding-bottom: 32px;
+}
+
+.modal-content * {
+    max-width: 100%;
+}
+
+.modal-button{
+    border: 0;
+    padding: 8px 12px;
+    font-size: 20px;
+    background-color: var(--clr-blue)
+    ;
+    color: white;
+}
+
+.modal-hidden{
+    visibility: hidden;
+}
+
+.modal-hidden .modal-window{
+    transform: scale(0);
+}
